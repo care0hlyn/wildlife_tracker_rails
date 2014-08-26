@@ -1,0 +1,10 @@
+<h1>Sightings for Specie:</h1>
+
+<form action="/species/<%= @sighting.specie.id %>/sightings" method="post">
+  <label for="specie_longitude">Longitude:</label>
+  <input id="specie_longitude" name="sighting[longitude]" type="text">
+  <label for="specie_latitude">Latitude:</label>
+  <input id="specie_latitude" name="sighting[latitude]" type="text">
+  <input id="specie_id" name="sighting[specie_id]" type="hidden" value="<%= @sighting.specie_id %>">
+  <button>Create Sighting</button>
+</form>
