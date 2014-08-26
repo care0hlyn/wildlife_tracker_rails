@@ -1,6 +1,7 @@
 class SpeciesController < ApplicationController
   def index
     @species = Specie.all
+    @specie = Specie.new
     render('species/index.html.erb')
   end
 
@@ -9,17 +10,12 @@ class SpeciesController < ApplicationController
     render('species/show.html.erb')
   end
 
-  def new
-    @specie = Specie.new
-    render('species/new.html.erb')
-  end
-
   def create
     @specie = Specie.new(params[:specie])
     if @specie.save
       render('species/success.html.erb')
     else
-      render('species/new.html.erb')
+      render('species/index.html.erb')
     end
   end
 

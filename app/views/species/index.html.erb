@@ -5,3 +5,21 @@
     <li><a href="/species/<%= specie.id %>"><%= specie.name %></a></li>
   <% end %>
 </ul>
+
+<h1>New specie</h1>
+
+<% if @specie.errors.any? %>
+  <h3>Please fix these errors:</h3>
+  <ul>
+    <% @specie.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
+<form action="/species" method="post">
+  <label for="specie_name">Name</label>
+  <input id="specie_name" name="specie[name]" type="text">
+  <button>Create Specie</button>
+</form>
+
