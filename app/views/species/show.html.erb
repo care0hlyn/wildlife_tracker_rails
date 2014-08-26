@@ -6,4 +6,20 @@
       data-method="delete"
       rel="nofollow">Delete</a></p>
 
+<h2>Sightings</h2>
+
+<ul>
+  <% @specie.sightings.each do |sighting| %>
+    <li>
+      Sighting ID: <%= sighting.id %>
+    </li>
+    <li>
+      Longitude: <%= sighting.longitude %>
+    </li>
+    <li>
+      Latitude: <%= sighting.latitude %>
+    </li>
+  <% end %>
+</ul>
+
 <p><a href="/species">Return to species listing</a></p>
